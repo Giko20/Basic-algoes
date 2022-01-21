@@ -1,0 +1,18 @@
+# code
+'''C++'''
+
+#include <iostream>
+using namespace std;
+int A[100000], n, i;
+int main()
+{
+	cout<<"Enter n: ";
+		cin>>n;
+	cout<<"Enter first three numbers: ";
+	for(i=0; i<3; i++)
+	  cin>>A[i];
+	for(i=3; i<n; i++)
+	  A[i]=A[i-3]+A[i-2]+A[i-1];
+	for(i=0; i<n; i++)
+	  cout<<A[i]<<" ";
+}
