@@ -1,0 +1,49 @@
+# code
+'''C++'''
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int n, m, k, A[10000], B[10000], C[100000];
+
+int main ()
+{
+	cout<<"Enter n: ";
+	cin>>n;
+
+	cout<<"Enter m: ";
+	cin>>m;
+
+	// Enter numbers in reverse order in massives
+
+	cout<<"Enter masive A: ";
+	for(int i=0; i<n; i++)
+	cin>>A[i];
+	cout<<endl;
+
+	cout<<"Enter masive B: ";
+	for(int i=0; i<m; i++)
+	cin>>B[i];
+	cout<<endl;
+
+	k=n+m;
+
+	for(int i=0; i<m; i++)
+	  for(int j=0; j<n; j++)
+	   C[i+j]=A[j]*B[i]+C[i+j];
+
+	   for(int i=0; i<k-1; i++)
+		{
+			C[i+1]=C[i+1]+C[i]/10;
+		 	C[i]=C[i]%10;
+		}
+
+
+	while(C[k]==0)
+		k--;
+
+	for(int i=k; i>=0; i--)
+		cout<<C[i]<<" ";
+	cout<<endl;
+}
